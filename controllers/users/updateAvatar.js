@@ -5,10 +5,11 @@ const fs = require("fs/promises");
 const avatarsDir = path.join(__dirname, "../../", "public", "avatars");
 
 const updateAvatar = async (req, res) => {
-  const { path: tempUpload, originalname } = req.file;
-  const { _id: id } = req.user;
-  const avatarName = `${id}_${originalname}`;
   try {
+    const { path: tempUpload, filename } = req.file;
+    const { _id: id } = req.user;
+    const [extention] = filename.split(".").reverse();
+    const avatarName = `${id}.${extention}`;
     const resultUpload = path.join(avatarsDir, avatarName);
     await fs.rename(tempUpload, resultUpload);
     const avatarURL = path.join("avatars", avatarName);

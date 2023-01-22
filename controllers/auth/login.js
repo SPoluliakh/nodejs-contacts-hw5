@@ -23,6 +23,11 @@ const login = async (req, res) => {
     response: "success",
     status: 200,
     data: {
+      user: {
+        name: user.name,
+        email,
+        avatarURL: user.avatarURL,
+      },
       token,
     },
   });

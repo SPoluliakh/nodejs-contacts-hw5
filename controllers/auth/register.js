@@ -18,8 +18,8 @@ const register = async (req, res) => {
   await newUser.save();
 
   res.status(201).json({
-    status: "success",
-    code: 201,
+    response: "success",
+    status: 201,
     data: {
       user: {
         name,

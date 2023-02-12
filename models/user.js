@@ -12,7 +12,7 @@ const userDbSchema = Schema(
     },
     email: {
       type: String,
-      required: [true, "Emaul is required"],
+      required: [true, "Email is required"],
       unique: [true, " Email must be unique"],
     },
     password: {

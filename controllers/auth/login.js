@@ -27,6 +27,7 @@ const login = async (req, res) => {
         name: user.name,
         email,
         avatarURL: user.avatarURL,
+        subscription: user.subscription,
       },
       token,
     },
